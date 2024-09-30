@@ -26,5 +26,5 @@ CS1200 Project
 * Change Game Sprites (images only) => 15pts
 * Change Game Sprites (wav only) => 15 pts
 
-#Total Amount Of Points: 30pts
-#Points Needed: 70pts
+# Total Amount Of Points: 30pts
+# Points Needed: 70pts
