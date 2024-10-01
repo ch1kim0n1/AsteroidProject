@@ -11,7 +11,6 @@ CS1200 Project
 * Saved Points System => 25pts
 * Infinite Level => 25pts
 * Enemy Ship => 25pts
-* Additional Level Simple => 15pts
 * Additional Level Challenging => 25pts
 * Display Remaining Lives Textual => 15pts
 * Display Remaining Lives Graphical => 25pts
@@ -25,6 +24,7 @@ CS1200 Project
 * Change Game Sprites (wav only) => 15pts
 * Display Hit Ratio Text => 15pts
 * Add background music => 15pts
+* Additional Level Simple => 15pts
 
-# Total Amount Of Points: 60pts
-# Points Needed: 40pts
+# Total Amount Of Points: 75pts
+# Points Needed: 25pts
