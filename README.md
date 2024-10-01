@@ -5,7 +5,6 @@ CS1200 Project
 * Add background music => 15pts
 * Change Static Background (animated gif image only) => 15pts
 * Add Dynamic Background => 25pts
-* Display Hit Ratio Text => 15pts
 * Pause/resume the game => 25pts
 * Display Points Text => 15pts
 * Ship Health Display => 25pts
@@ -24,7 +23,8 @@ CS1200 Project
 
 # List of features that WERE added
 * Change Game Sprites (images only) => 15pts
-* Change Game Sprites (wav only) => 15 pts
+* Change Game Sprites (wav only) => 15pts
+* Display Hit Ratio Text => 15pts
 
-# Total Amount Of Points: 30pts
-# Points Needed: 70pts
+# Total Amount Of Points: 45pts
+# Points Needed: 55pts
