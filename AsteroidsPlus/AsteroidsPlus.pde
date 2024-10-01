@@ -81,7 +81,27 @@ void nextLevelStateMachine()
   } else if (currentGameLevel instanceof AsteroidsLevel2) {
     if (state == GameState.Finished) {
       currentGameLevel.stop();
-      currentGameLevel = new WinLevel(this);
+      currentGameLevel = new AsteroidsLevel3(this); // Transition to Level 3
+      currentGameLevel.start();
+    } else if (state == GameState.Lost) {
+      currentGameLevel.stop();
+      currentGameLevel = new LoseLevel(this);
+      currentGameLevel.start();
+    }
+  } else if (currentGameLevel instanceof AsteroidsLevel3) {
+    if (state == GameState.Finished) {
+      currentGameLevel.stop();
+      currentGameLevel = new AsteroidsLevel4(this); // Transition to Level 4
+      currentGameLevel.start();
+    } else if (state == GameState.Lost) {
+      currentGameLevel.stop();
+      currentGameLevel = new LoseLevel(this);
+      currentGameLevel.start();
+    }
+  } else if (currentGameLevel instanceof AsteroidsLevel4) {
+    if (state == GameState.Finished) {
+      currentGameLevel.stop();
+      currentGameLevel = new WinLevel(this); // After Level 4, go to WinLevel
       currentGameLevel.start();
     } else if (state == GameState.Lost) {
       currentGameLevel.stop();

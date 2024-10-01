@@ -136,6 +136,7 @@ abstract class AsteroidsGameLevel extends GameLevel
                     ((PowerUp)powerUp).activate();
                     powerUp.setInactive();
                     missile.setInactive();
+                    totalHits++;
                 }
             }
         }
