@@ -20,7 +20,6 @@ int remainingLives;
 float globalVolume = .2;
 
 boolean startButtonRegistered = false;
-boolean paused = false;
 
 void setup() 
 {
@@ -98,13 +97,8 @@ void nextLevelStateMachine()
 // Activated by Processing when a key is pressed
 void keyPressed() 
 {
-  if (key == 'P' || key == 'p') {
-        paused = !paused;
-    }
-    if (!paused) {
-        currentGameLevel.keyPressed();
-        kbController.keyPressed(keyCode, key);
-    }
+  currentGameLevel.keyPressed();
+  kbController.keyPressed(keyCode, key);
 }
 
 void keyReleased() 
