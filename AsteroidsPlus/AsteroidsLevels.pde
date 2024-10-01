@@ -1,5 +1,5 @@
 class AsteroidsLevel1 extends AsteroidsGameLevel 
-{
+{   
     float missileSpeed = 200;
     StopWatch powerupSW;
     int periodBetweenPU = 10;

@@ -8,6 +8,8 @@ import sprites.utils.*;
 import sprites.maths.*;
 import java.util.*;
 import java.util.concurrent.*;
+import ddf.minim.*;
+
 
 GameLevel currentGameLevel; 
 PImage background;
@@ -18,6 +20,8 @@ StopWatch stopWatch = new StopWatch();
 int totalLives = 3;
 int remainingLives;
 float globalVolume = .2;
+    Minim minim;
+    AudioPlayer bgMusic;
 
 boolean startButtonRegistered = false;
 
@@ -37,6 +41,11 @@ void setup()
   // register the function (pre) that will be called
   // by Processing before the draw() function. 
   registerMethod("pre", this);
+  
+  minim = new Minim(this);
+    bgMusic = minim.loadFile("bg_music.wav");
+    bgMusic.setGain(-20); // Reduce volume by 10 decibels
+    bgMusic.loop();
 }
 
 // Executed before each next frame is drawn. 
@@ -119,4 +128,10 @@ void draw()
   currentGameLevel.drawBackground();
   S4P.drawSprites();
   currentGameLevel.drawOnScreen();
+}
+
+public void stop() {
+    bgMusic.close();
+    minim.stop();
+    super.stop();
 }
