@@ -2,7 +2,6 @@
 CS1200 Project
 
 # List of features that will be added
-* Add background music => 15pts
 * Change Static Background (animated gif image only) => 15pts
 * Add Dynamic Background => 25pts
 * Pause/resume the game => 25pts
@@ -25,6 +24,7 @@ CS1200 Project
 * Change Game Sprites (images only) => 15pts
 * Change Game Sprites (wav only) => 15pts
 * Display Hit Ratio Text => 15pts
+* Add background music => 15pts
 
-# Total Amount Of Points: 45pts
-# Points Needed: 55pts
+# Total Amount Of Points: 60pts
+# Points Needed: 40pts
