@@ -1,8 +1,3 @@
-/* This source code is copyrighted materials owned by the UT system and cannot be placed 
- into any public site or public GitHub repository. Placing this material, or any material 
- derived from it, in a publically accessible site or repository is facilitating cheating 
- and subjects the student to penalities as defined by the UT code of ethics. */
-
 class AsteroidsLevel1 extends AsteroidsGameLevel 
 {
   float missileSpeed = 200;
@@ -11,6 +6,10 @@ class AsteroidsLevel1 extends AsteroidsGameLevel
   StopWatch addAsteroidsSW;
   int periodBetweenAdds = 5;
   float asteroidSpeed;
+
+  // Variables to track missiles fired and hits
+  int missilesFired = 0;
+  int missilesHit = 0;
 
   AsteroidsLevel1(PApplet applet)
   {
@@ -49,17 +48,19 @@ class AsteroidsLevel1 extends AsteroidsGameLevel
       powerUps.add(new ShieldPowerup(game, centerX, centerY, 100, ship));
     }
 
-    // TEAMS: Example of adding additional asteroids for Infinite Level
-    /*
-    if (addAsteroidsSW.getRunTime() > periodBetweenAdds) {
-     addAsteroidsSW.reset();
-     
-     asteroidSpeed += 20;
-     int newX = ((int)ship.getX() + game.width/2) % game.width;
-     int newy = ((int)ship.getY() + game.height/2) % game.height;
-     asteroids.add(new BigAsteroid(game, newX, newy, 0, 0.02, asteroidSpeed, random(0, 6.5)));
-     }
-     */
+    // Collision detection between missiles and asteroids
+    for (int i = missiles.size() - 1; i >= 0; i--) {
+      GameObject missileObj = missiles.get(i);
+      for (int j = asteroids.size() - 1; j >= 0; j--) {
+        GameObject asteroidObj = asteroids.get(j);
+        if (missileObj.collidesWith(asteroidObj)) {
+          missiles.remove(i);
+          asteroidObj.hitBy(missileObj); // Handle asteroid destruction
+          missilesHit++;
+          break; // Exit the inner loop since the missile is destroyed
+        }
+      }
+    }
   }
 
   void drawBackground() 
@@ -83,6 +84,11 @@ class AsteroidsLevel1 extends AsteroidsGameLevel
     text(msg, 10, 60);
     msg = "Ship Speed: " + (int)ship.getSpeed();
     text(msg, 10, 80);
+
+    // Calculate and display hit ratio
+    float hitRatio = (missilesFired > 0) ? ((float)missilesHit / missilesFired) : 0;
+    msg = String.format("Hit Ratio: %.2f%%", hitRatio * 100);
+    text(msg, 10, 100);
 
     ship.drawOnScreen(); // Draws Energy Bar
   }
@@ -111,6 +117,8 @@ class AsteroidsLevel1 extends AsteroidsGameLevel
       missile.setSpeed(speed);
       missiles.add(missile);
 
+      missilesFired++; // Increment missiles fired
+
       ship.energy -= ship.deplete;
     }
   }
@@ -123,6 +131,10 @@ class AsteroidsLevel2 extends AsteroidsGameLevel
   float missileSpeed = 400;
   StopWatch powerupSW;
   int periodBetweenPU = 10;
+
+  // Variables to track missiles fired and hits
+  int missilesFired = 0;
+  int missilesHit = 0;
 
   AsteroidsLevel2(PApplet applet)
   {
@@ -152,6 +164,20 @@ class AsteroidsLevel2 extends AsteroidsGameLevel
       powerupSW.reset();
       powerUps.add(new ShieldPowerup(game, game.width/2, game.height/2, 100, ship));
     }
+
+    // Collision detection between missiles and asteroids
+    for (int i = missiles.size() - 1; i >= 0; i--) {
+      GameObject missileObj = missiles.get(i);
+      for (int j = asteroids.size() - 1; j >= 0; j--) {
+        GameObject asteroidObj = asteroids.get(j);
+        if (missileObj.collidesWith(asteroidObj)) {
+          missiles.remove(i);
+          asteroidObj.hitBy(missileObj); // Handle asteroid destruction
+          missilesHit++;
+          break; // Exit the inner loop since the missile is destroyed
+        }
+      }
+    }
   }
 
   void drawBackground() 
@@ -175,6 +201,11 @@ class AsteroidsLevel2 extends AsteroidsGameLevel
     text(msg, 10, 60);
     msg = "Ship Speed: " + (int)ship.getSpeed();
     text(msg, 10, 80);
+
+    // Calculate and display hit ratio
+    float hitRatio = (missilesFired > 0) ? ((float)missilesHit / missilesFired) : 0;
+    msg = String.format("Hit Ratio: %.2f%%", hitRatio * 100);
+    text(msg, 10, 100);
 
     ship.drawOnScreen(); // Draws Energy Bar
   }
@@ -201,6 +232,8 @@ class AsteroidsLevel2 extends AsteroidsGameLevel
       missile.setRot(ship.getRot() - 1.5708);
       missile.setSpeed(speed);
       missiles.add(missile);
+
+      missilesFired++; // Increment missiles fired
 
       ship.energy -= ship.deplete;
     }
