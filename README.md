@@ -16,7 +16,6 @@ CS1200 Project + Volume Warning(its loud)
 * Display Remaining Lives Graphical => 25pts
 * Add Powerup => 25/15pts
 * Powerup Trigger => 25pts
-* Streak Effect => 25pts
 * Custom Ships => 25pts
 
 # List of features that WERE added
@@ -25,6 +24,7 @@ CS1200 Project + Volume Warning(its loud)
 * Display Hit Ratio Text => 15pts
 * Add background music => 15pts
 * Additional Level Simple => 15pts
+* Streak Effect => 25pts (to be added)
 
-# Total Amount Of Points: 75pts
+# Total Amount Of Points: 75pts (100pts)
 # Points Needed: 25pts
