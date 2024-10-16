@@ -196,6 +196,9 @@ class AsteroidsLevel2 extends AsteroidsGameLevel
             msg = "Hit Ratio: N/A";
         }
         text(msg, 10, 100);
+        
+        msg = "Current Streak: " + currentStreak;
+    text(msg, 10, 120);
     }
 
     void keyPressed() 
@@ -303,6 +306,9 @@ class AsteroidsLevel3 extends AsteroidsGameLevel
             msg = "Hit Ratio: N/A";
         }
         text(msg, 10, 100);
+        
+        msg = "Current Streak: " + currentStreak;
+    text(msg, 10, 120);
     }
 
     void keyPressed() 
@@ -414,6 +420,9 @@ class AsteroidsLevel4 extends AsteroidsGameLevel
             msg = "Hit Ratio: N/A";
         }
         text(msg, 10, 100);
+        
+        msg = "Current Streak: " + currentStreak;
+    text(msg, 10, 120);
     }
 
     void keyPressed() 
