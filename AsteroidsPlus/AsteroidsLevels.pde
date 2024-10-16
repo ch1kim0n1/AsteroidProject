@@ -89,6 +89,9 @@ class AsteroidsLevel1 extends AsteroidsGameLevel
             msg = "Hit Ratio: N/A";
         }
         text(msg, 10, 100);
+        
+        msg = "Current Streak: " + currentStreak;
+    text(msg, 10, 120);
     }
 
     void keyPressed() 
@@ -104,7 +107,7 @@ class AsteroidsLevel1 extends AsteroidsGameLevel
     {
     }
 
-    private void launchMissile(float speed) 
+    void launchMissile(float speed) 
     {
         if (ship.energy >= .2) {
             int shipx = (int)ship.getX();
@@ -208,7 +211,7 @@ class AsteroidsLevel2 extends AsteroidsGameLevel
     {
     }
 
-    private void launchMissile(float speed) 
+    void launchMissile(float speed) 
     {
         if (ship.energy >= .2) {
             int shipx = (int)ship.getX();
@@ -315,7 +318,7 @@ class AsteroidsLevel3 extends AsteroidsGameLevel
     {
     }
 
-    private void launchMissile(float speed) 
+    void launchMissile(float speed) 
     {
         if (ship.energy >= .2) {
             int shipx = (int)ship.getX();
@@ -426,7 +429,7 @@ class AsteroidsLevel4 extends AsteroidsGameLevel
     {
     }
 
-    private void launchMissile(float speed) 
+    void launchMissile(float speed) 
     {
         if (ship.energy >= .2) {
             int shipx = (int)ship.getX();

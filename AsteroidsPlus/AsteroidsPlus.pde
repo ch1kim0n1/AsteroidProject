@@ -44,7 +44,7 @@ void setup()
   
   minim = new Minim(this);
     bgMusic = minim.loadFile("bg_music.wav");
-    bgMusic.setGain(-20); // Reduce volume by 10 decibels
+    bgMusic.setGain(-30); // Reduce volume by 10 decibels
     bgMusic.loop();
 }
 
