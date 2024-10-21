@@ -24,7 +24,7 @@ CS1200 Project + Volume Warning(its loud)
 * Display Hit Ratio Text => 15pts
 * Add background music => 15pts
 * Additional Level Simple => 15pts
-* Streak Effect => 25pts (to be added)
+* Streak Effect => 25pts 
 
-# Total Amount Of Points: 75pts (100pts)
-# Points Needed: 25pts
+# Total Amount Of Points: 100pts
+# Points Needed: 0pts (each member need to push at least one feature)
