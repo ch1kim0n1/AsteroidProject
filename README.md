@@ -1,5 +1,5 @@
 ## AsteroidProject
-CS1200 Project + Volume Warning(its loud)
+CS1200 Project
 
 # List of features that will be added
 * Change Static Background (animated gif image only) => 15pts
